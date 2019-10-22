@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <title>Exercice 5</title>
+  </head>
+  <body>
+    <form name="myForm">
+        <label for="firstNumber">Premier nombre : </label><input Require type="text" id="firstNumber" name="firstNumber"/>
+        <label for="secondNumber">Deuxième nombre : </label><input Required type="text" id="secondNumber" name="secondNumber"/>
+        <button  id="submit" name ="submit" onclick="resteDivisionEuclidienne(myForm)">Valider</button>
+    </form>
+    <script>
+      function resteDivisionEuclidienne(){
+        if (firstNumber.value!=null){
+          // 'Math.trunc'= tronque le nombre à l'unité
+          var result = Math.trunc(firstNumber.value)*secondNumber.value;
+          alert('Le resultat est égal à: '+ result);
+        }else {
+          alert('Ce n\'est pas correct');
+        }
+      }
+    </script>
+  </body>
+</html>
