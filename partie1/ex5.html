@@ -7,19 +7,28 @@
       <title>Exercice 5</title>
   </head>
   <body>
-    <form name="myForm">
-        <label for="firstNumber">Premier nombre : </label><input Require type="text" id="firstNumber" name="firstNumber"/>
-        <label for="secondNumber">Deuxième nombre : </label><input Required type="text" id="secondNumber" name="secondNumber"/>
-        <button  id="submit" name ="submit" onclick="resteDivisionEuclidienne(myForm)">Valider</button>
+    <form>
+      <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/>
+      <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/>
+      <button  id="submit" name ="submit">Valider</button>
+      <!--  <button  id="submit" name ="submit" onclick="resteDivisionEuclidienne(myForm)">Valider</button> -->
     </form>
     <script>
+      document.getElementById('submit').addEventListener('click', resteDivisionEuclidienne);
       function resteDivisionEuclidienne(){
-        if (firstNumber.value!=null){
-          // 'Math.trunc'= tronque le nombre à l'unité
-          var result = Math.trunc(firstNumber.value)*secondNumber.value;
-          alert('Le resultat est égal à: '+ result);
+        var firstNumber=document.getElementById('firstNumber').value;
+        var secondNumber=document.getElementById('secondNumber').value;
+        // 'isNaN' est une fonction qui prend en parametre une valeur, et renvoi True si ce n'est pas un entier (car 'isNotANumber'), et revoi False si c'est un entier
+        // 'Number.isInteger' est une fonction qui verifie si le nombre est un entier et renvoi True si c'est le cas.
+        // 'parseFloat' est une fonction qui transforme un string en float 
+        if (isNaN(firstNumber) && isNaN(secondNumber) && !Number.isInteger(parseFloat(firstNumber)) && !Number.isInteger(parseFloat(secondNumber))) {
+          alert('Veuillez n\'introduire que des nombres avec une décimale.')
+        }else if (!firstNumber && !secondNumber) {
+          alert('Au moins un des champs n\'a pas été rempli.')
         }else {
-          alert('Ce n\'est pas correct');
+          // 'parseInt'
+          var result = parseInt(firstNumber)*secondNumber;
+          alert('Le resultat est égal à: '+ result);
         }
       }
     </script>

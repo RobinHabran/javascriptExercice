@@ -10,17 +10,35 @@
     <form name="formulaire">
         <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname"/>
         <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname"/>
-        <label for="city">Ville : </label><input type="text" name="city" id="city" onclick="afficheResultatFormulaire()"/>
-        <button  name="submit" id="submit" onclick="afficheResultatFormulaire(formulaire)">Valider</button>
+        <label for="city">Ville : </label><input type="text" name="city" id="city" onclick="displayInfoUser()"/>
+        <!-- Méthode 1 -->
+      <!--   <button  name="submit" id="submit"onclick="displayInfoUser(formulaire)">Valider</button> -->
+        <!-- Méthode 2 -->
+        <button  name="submit" id="submit">Valider</button>
     </form>
     <script>
-    function afficheResultatFormulaire(){
-      // déclaration de la variable 'msg' incluant le contenu des varibales ci-dessus
-      // 'variable.value' donne le contenu de la variable
-      var msg='firstname: '+firstname.value+'\n'+'lastname: '+lastname.value+'\n'+'city: '+city.value;
-      // 'alert()' pour ouvrir une boite de dialogue
-      alert(msg);
-    }
+      // Utilisez l'une des deux méthodes, les deux sont valides
+      /*
+      // Méthode 1 //
+      function displayInfoUser(){
+        // déclaration de la variable 'msg' incluant le contenu des varibales ci-dessus
+        // 'variable.value' donne le contenu de la variable
+        var msg='firstname: '+firstname.value+'\n'+'lastname: '+lastname.value+'\n'+'city: '+city.value;
+        // 'alert()' pour ouvrir une boite de dialogue
+        alert(msg);
+      } */
+
+      // Méthode 2 //
+      // on récupère l'id de notre bouton et on lui assigne une coute d'evenement quand l'utilisateur clique qui renvoi sur une fonction. Dans notre cas c'est la fonction que l'on cré ci-dessous
+      document.getElementById('submit').addEventListener('click',displayInfoUser);
+      // je cré une fontion qui va afficher les information retenues dans le formulaire
+      function displayInfoUser(){
+        // on récupère la valeur de chaque variable ci dessus, que l'on assigne a une nouvelle variable portant le même nom
+        var lastname=document.getElementById('lastname').value;
+        var firstname=document.getElementById('firstname').value;
+        var city=document.getElementById('city').value;
+        alert('firstname: '+firstname+'\n'+'lastname: '+lastname+'\n'+'city: '+city)
+      }
     </script>
   </body>
 </html>
