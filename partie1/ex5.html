@@ -14,23 +14,22 @@
       <!--  <button  id="submit" name ="submit" onclick="resteDivisionEuclidienne(myForm)">Valider</button> -->
     </form>
     <script>
-      document.getElementById('submit').addEventListener('click', resteDivisionEuclidienne);
-      function resteDivisionEuclidienne(){
-        var firstNumber=document.getElementById('firstNumber').value;
-        var secondNumber=document.getElementById('secondNumber').value;
+      document.getElementById('submit').addEventListener('click', multiplicationIntFloat);
+      function multiplicationIntFloat(){
+        var number1 = document.getElementById('firstNumber').value;
+        var number2 = document.getElementById('secondNumber').value;
         // 'isNaN' est une fonction qui prend en parametre une valeur, et renvoi True si ce n'est pas un entier (car 'isNotANumber'), et revoi False si c'est un entier
         // 'Number.isInteger' est une fonction qui verifie si le nombre est un entier et renvoi True si c'est le cas.
-        // 'parseFloat' est une fonction qui transforme un string en float 
-        if (isNaN(firstNumber) && isNaN(secondNumber) && !Number.isInteger(parseFloat(firstNumber)) && !Number.isInteger(parseFloat(secondNumber))) {
-          alert('Veuillez n\'introduire que des nombres avec une décimale.')
-        }else if (!firstNumber && !secondNumber) {
-          alert('Au moins un des champs n\'a pas été rempli.')
-        }else {
-          // 'parseInt'
-          var result = parseInt(firstNumber)*secondNumber;
-          alert('Le resultat est égal à: '+ result);
+        // 'parseFloat' est une fonction qui transforme un string en float
+        if((isNaN(number1) == false) && (isNaN(number2) == false) && (Number.isInteger(parseFloat(number1)) == false) && (Number.isInteger(parseFloat(number2)) == false)){
+            // parseInt supprime la décimale et Number conserve le nombre tel qu'il est saisi.
+            // La saisie des nombres décimaux nécessite l'utilisation du point, la virgule faisant planter le calcul...
+          let result = parseInt(number1) * Number(number2);
+            alert('Le resultat est : ' + result);
+          }else{
+            alert('Veuillez ne saisir que des nombres décimaux');
+          }
         }
-      }
     </script>
   </body>
 </html>
