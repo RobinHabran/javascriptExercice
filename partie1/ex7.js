@@ -16,6 +16,8 @@ function appelSchmilblic(){
   var shoeSize   = document.getElementById('shoeSize').value;
   var yearOfBirth = document.getElementById('yearOfBirth').value;
   var result;
+  parseInt(shoeSize);
+  parseInt(yearOfBirth);
 
   // cas de la pointure
   if (isNaN(shoeSize)==false && isNaN(yearOfBirth)==false) {
