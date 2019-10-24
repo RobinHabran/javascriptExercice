@@ -11,7 +11,7 @@ function replacementImgOut(){
   document.getElementById('image1').setAttribute('src','ex1.jpg');
 }
 function replacementImg(){
-  if (document.getElementById('image1').src == 'ex1.jpg') {
+  if (document.getElementById('image1').src == 'file:///home/lmno002/Documents/javascriptExercice/partie2/ex1.jpg') {
     document.getElementById('image1').setAttribute('src','ex1_2.jpg');
   }else {
     document.getElementById('image1').setAttribute('src','ex1.jpg');
