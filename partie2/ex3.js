@@ -1,5 +1,6 @@
-document.getElementById('lastname').addEventListener('keypress', alertKeyTyping);
+// 'input' = keypress 
+document.getElementById('lastname').addEventListener('input', alertKeyTyping);
 
 function alertKeyTyping(){
-  alert('Salut');
+  alert(document.getElementById('lastname').value);
 }
