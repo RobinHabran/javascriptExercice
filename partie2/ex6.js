@@ -7,6 +7,10 @@
     image.src = image.id + '.jpg';
   }
 
-  /*function mofifiedImgOnAndOut(image , ext) {
-    image.src = image.id + ext;
-  }*/
+  function modifiedImgOnAndOut(image , event) {
+    if (event.type = 'mouseover') {
+      image.src = image.id + '_2.jpg';
+    }else {
+      image.src = image.id + '.jpg'
+    }
+  }
