@@ -18,6 +18,7 @@ var concatString = function (texte1, texte2) {
 var afficherCar5 = function (texte) {
     // renvoie le caractère à l'indice 4 de la chaine de caractère
     return texte[4];
+  // return texte.charAt(4); //fonctionne aussi
 }
 var afficher9Car = function (texte) {
     // la fonction 'substring(a,b)' affiche la chaine de caractere de l'indice 'a' à l'indice 'b'
@@ -37,7 +38,7 @@ var SupprEspaceString = function (texte) {
 }
 var IsString = function (texte) {
     // 'typeof' retourne le type de la valeur 'texte'
-    return typeof texte === 'string';
+    return typeof texte == 'string';
 }
 var AfficherExtensionString = function (texte) {
    // 'substring(a,b)' renvoie la chaine de caractère de l'indice 'a' à 'b'; 'lastIndexOf((a),(optionnel))'   renvoi la derniere occurence du caractère 'a'
@@ -65,15 +66,20 @@ var valeurAbsolue = function (nombre) {
     return Math.abs(nombre);
 }
 var valeurAbsolueArray = function (array) {
-    let copieArray=[]
-    return copie.forEach(Math.abs(array));
+  // 'map(x => calculAfairesur x)' = applique une formule mathématique sur chaque element d'un tableau
+    return array.map(x => Math.abs(x));
 }
 var sufaceCercle = function (rayon) {
-    return 'A completer';
+  // 'Math.round(x)' = arrondi de 'x' ; 'Math.PI' = pi (3,1415...) ; 'Math.pow(a,b)' = calcul 'a' puissance 'b'
+    return Math.round(Math.PI*Math.pow(rayon,2));
 }
 var hypothenuse = function (ab, ac) {
-    return 'A completer';
+  // 'hypot(ab,ac)' = retourne l'hypothénuse 'bc' du triangle abc
+    return Math.hypot(ab,ac);
 }
 var calculIMC = function (poids, taille) {
-    return 'A completer';
+  // 'result' = resultat de l'IMC
+  // 'parseFloat()' = transforme la variable en Float ; 'toFixed(n)' = coupe à la 2ème décimale
+    let result = poids/(taille*taille);
+    return parseFloat(result.toFixed(2));
 }
