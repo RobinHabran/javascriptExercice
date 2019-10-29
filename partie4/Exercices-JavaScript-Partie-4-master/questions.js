@@ -45,24 +45,28 @@ var AfficherExtensionString = function (texte) {
     return texte.substring(texte.lastIndexOf('.')+1,texte.length);
 }
 var NombreEspaceString = function (texte) {
-  // 
-    return 'A completer';
+  // la fonction 'split(' ')' compte le nombre d'espace
+    return texte.split(' ').length-1;
 }
 var InverseString = function (texte) {
-    return 'A completer';
+  // fonction qui permet d'inverser une chaine de caractere
+    return texte.split('').reverse().join('');
 }
 
 /**
  * Exercices sur les nombres et les caluls mathématiques
  */
 var calculPuissance = function (x, y) {
-    return 'A completer';
+  // fonction qui retourne le resultat de 'x' puissance 'y'
+    return Math.pow(x,y);
 }
 var valeurAbsolue = function (nombre) {
-    return 'A completer';
+  // renvoie la valeur absolue du nombre
+    return Math.abs(nombre);
 }
 var valeurAbsolueArray = function (array) {
-    return 'A completer';
+    let copieArray=[]
+    return copie.forEach(Math.abs(array));
 }
 var sufaceCercle = function (rayon) {
     return 'A completer';
